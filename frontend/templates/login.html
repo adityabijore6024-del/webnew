@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head> 
+<body>
+    <h1>Login your Account</h1>
+    <h1>Keep Study</h1>
+
+    <form method="POST">
+        <div class="container">
+
+        {% csrf_token %}
+
+            <input type="text" name="username3" placeholder="Username">
+
+            <input type="number" name="mobile3" placeholder="Mobile.no">
+
+            <input type="password" name="password3" placeholder="Password">
+
+            <button type="submit">Login</button>
+        </div>
+        </form>
+</body>
+</html>

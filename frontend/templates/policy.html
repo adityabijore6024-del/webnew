@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Terms & Policy</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f6f8;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:80%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#2c3e50;
+}
+
+h2{
+    margin-top:20px;
+    color:#34495e;
+}
+
+p{
+    color:#555;
+    line-height:1.6;
+}
+
+.highlight{
+    background:#eaf4ff;
+    padding:10px;
+    border-left:5px solid #3498db;
+}
+
+/* checkbox */
+.check-box{
+    display:flex;
+    align-items:center;
+    margin-top:25px;
+    cursor:pointer;
+}
+
+.box{
+    width:22px;
+    height:22px;
+    border:2px solid #333;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:10px;
+    font-size:18px;
+    user-select:none;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:gray;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    pointer-events:none;
+}
+
+.btn.active{
+    background:#27ae60;
+    pointer-events:auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📜 Terms & Policy</h1>
+
+<h2>1. Subscription Plan</h2>
+<p class="highlight">
+Users must purchase a ₹99 Starter Access Plan to access platform features.
+</p>
+<p>This subscription gives access to dashboard, teacher list, and basic previews.</p>
+
+<h2>2. Teacher Unlock System</h2>
+<p>
+Each teacher is available with a one-time unlock payment. After unlocking, all courses of that teacher become accessible.
+</p>
+
+<h2>3. Courses & Learning Material</h2>
+<p>
+After unlocking a teacher, users will get:
+<br>✔ Video Lectures  
+<br>✔ Notes (PDF/Text)  
+<br>✔ Assignments  
+<br>✔ Tests & Quizzes  
+<br>✔ Practice Material
+</p>
+
+<h2>4. Payment Policy</h2>
+<p>
+- ₹99 is platform entry fee  
+- Teacher unlock is one-time payment  
+- No hidden charges  
+</p>
+
+<h2>5. User Rules</h2>
+<p>
+- Account sharing is not allowed  
+- Content piracy is strictly prohibited  
+- Refunds are not guaranteed after purchase  
+</p>
+
+<h2>6. Acceptance</h2>
+<p>
+By using this platform, user agrees to all terms and conditions mentioned above.
+</p>
+
+<h2>7. Smart Learning Search Engine</h2>
+<p>
+Our platform provides an integrated Smart Search Engine that helps students find answers, explanations, and study material instantly from course content and notes.
+</p>
+
+<p class="highlight">
+This search feature is designed only for educational purposes. Experience a smart search system that lets you explore and find anything instantly, just like a modern search engine..
+</p>
+
+<!-- CHECKBOX -->
+<div class="check-box" onclick="toggleCheck()">
+    <div class="box" id="box"></div>
+    <span>I have read and agree to Terms & Conditions</span>
+</div>
+
+<!-- BUTTON -->
+<a id="btn" class="btn" href="{% url 'signup'%}">Continue</a>
+
+</div>
+
+<script>
+let checked = false;
+
+function toggleCheck(){
+    checked = !checked;
+
+    let box = document.getElementById("box");
+    let btn = document.getElementById("btn");
+
+    if(checked){
+        box.innerHTML = "✔";
+        btn.classList.add("active");
+    } else {
+        box.innerHTML = "";
+        btn.classList.remove("active");
+    }
+}
+</script>
+
+</body>
+</html>

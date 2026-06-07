@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment</title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/payment.css' %}"> 
+</head>
+<body>
+
+    {% if error %}
+    <p style="color:red;text-align:center;"> 
+    {{ error }}
+    </p>
+    {% endif %}
+
+<div class="box">
+
+<h1>Course Membership</h1>
+
+<div class="price">
+₹99
+</div>
+
+<p>Access Premium Learning Platform</p>
+
+<p>✓ Teacher Courses</p>
+<p>✓ Video lectures</p>
+<p>✓ Notes</p>
+<p>✓ Assignments</p>
+<p>✓ Tests</p>
+
+<br>
+
+<button >
+Pay ₹99 Now
+</button>
+
+</div>
+
+</body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+var options = {
+    "key": "{{ razorpay_key }}",
+
+    "amount": "{{ payment.amount }}",
+
+    "currency": "INR",
+
+    "name": "Course Platform",
+
+    "description": "Membership Payment",
+
+    "order_id": "{{ payment.id }}",
+
+    "handler": function (response){
+
+        window.location.href =
+        "/payment-success/?payment_id=" +
+        response.razorpay_payment_id;
+    }
+};
+
+var rzp = new Razorpay(options);
+
+document.querySelector("button").onclick = function(e){
+    rzp.open();
+    e.preventDefault();
+}
+
+</script>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Animation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    min-height:100vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+
+/* Welcome Screen */
+#welcome{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.text span{
+    font-size:50px;
+    color:white;
+    font-weight:bold;
+    opacity:0;
+    display:inline-block;
+    animation:popup 0.5s forwards;
+}
+
+.text span:nth-child(1){animation-delay:0.1s;}
+.text span:nth-child(2){animation-delay:0.2s;}
+.text span:nth-child(3){animation-delay:0.3s;}
+.text span:nth-child(4){animation-delay:0.4s;}
+.text span:nth-child(5){animation-delay:0.5s;}
+.text span:nth-child(6){animation-delay:0.6s;}
+.text span:nth-child(7){animation-delay:0.7s;}
+.text span:nth-child(8){animation-delay:0.8s;}
+.text span:nth-child(9){animation-delay:0.9s;}
+.text span:nth-child(10){animation-delay:1.0s;}
+.text span:nth-child(11){animation-delay:1.1s;}
+.text span:nth-child(12){animation-delay:1.2s;}
+.text span:nth-child(13){animation-delay:1.3s;}
+.text span:nth-child(14){animation-delay:1.4s;}
+.text span:nth-child(15){animation-delay:1.5s;}
+.text span:nth-child(16){animation-delay:1.6s;}
+.text span:nth-child(17){animation-delay:1.7s;}
+.text span:nth-child(18){animation-delay:1.8s;}
+.text span:nth-child(19){animation-delay:1.9s;}
+.text span:nth-child(20){animation-delay:2.0s;}
+.text span:nth-child(21){animation-delay:2.1s;}
+.text span:nth-child(22){animation-delay:2.2s;}
+.text span:nth-child(23){animation-delay:2.3s;}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Main Page */
+#main-page{
+    display:none;
+    text-align:center;
+    padding: 4px;
+    margin-left: 580px;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+h1{
+    margin-top: 50px;
+    color:#333;
+}
+.bost{
+    margin-top: 10px;
+    font-size: 30px;
+    background: linear-gradient(65deg, red,yellow,black,green) ;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+.hero{
+    margin-top: 10px;
+    color: rgb(207, 203, 203);
+}
+
+.start{
+    height:40px ;
+    width: 210px;
+    border: 3px solid blue;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px rgba(216, 23, 23, 0.692);
+
+}
+.contain{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.contain1{
+    border: 3px solid red;
+    width: 250px;
+    height:300px;
+    border-radius: 20px;
+    background-color: transparent;
+    margin-top: 30px;
+
+}
+.contain2{
+    border: 3px solid greenyellow;
+    width: 250px;
+    height:300px;
+    border-radius: 20px;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.contain3{
+    border: 3px solid yellow;
+    width: 250px;
+    height:300px;
+    border-radius: 20px;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+</style>
+</head>
+<body>
+
+<!-- Welcome Screen -->
+<div id="welcome">
+    <div class="text">
+<span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span><span>&nbsp;</span><span>I</span><span>n</span><span>&nbsp;</span> <span>O</span><span>u</span><span>r</span><span>&nbsp;</span><span>P</span><span>l</span><span>a</span><span>t</span><span>f</span><span>o</span><span>r</span><span>m</span>
+    </div>
+</div>
+
+<!-- main-page  -->
+<div id="main-page" class="main-page">
+<p>this our platform</p>
+</div>
+
+<h1>Make Your Career</h1>
+<h1 class="bost">Boost Your Success </h1>
+
+<p class="hero">Learn, Grow, and Succeed. Explore premium courses  across <br>a wide range of subjects and build a brighter future with confidence. 🚀</p>
+<a href="{% url 'policy' %}">
+
+    <button type="submit" method class="start"> 🚀 Start Your Journey    →</button>
+</a>
+
+<div class="contain" >
+
+    <div class="contain1">
+        hello
+    </div>
+    
+    <div class="contain2">
+hello
+</div>
+
+<div class="contain3">
+    hello
+</div>
+</div>
+
+
+<script>
+setTimeout(function(){
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("main-page").style.display = "block";
+}, 3500);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+
+</head>
+<body>
+    <h1>Welcom in Our Course Gallery</h1>
+    <h1>Register then kipe studey</h1>
+    {% if error %}
+    <p style="color:red;text-align:center;"> 
+    {{ error }}
+    </p>
+    {% endif %}
+    <form method="POST">
+        <div class="container">
+            
+            
+            {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Enter your name" required>
+
+        <input type="number" name="age" placeholder="Enter your age" required>
+        
+        <input type="number" name="mobile" placeholder="Enter your mobile no." required>
+
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <input type="password" name="password1" placeholder="Creat Password" required>
+
+        <input type="password" name="password2" placeholder=" Confirem Password" required>
+        
+        <button type="submit">PAY </button>
+    </div>
+    </form>
+</body>
+</html>
